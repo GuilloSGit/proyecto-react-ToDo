@@ -45,7 +45,8 @@ const useStyle = makeStyles({
     msgTasks:{
         margin:"10px",
         textAlign:"center",
-        lineHeight:"1.5rem"
+        lineHeight:"1.8rem",
+        fontSize:"20px"
     },
     numOfTasks:{
         backgroundColor:"rgba(13, 13, 13, 0.65)",
@@ -74,9 +75,10 @@ const useStyle = makeStyles({
         margin:"10px",
         fontSize:"25px",
         borderRadius:"20px",
-        boxShadow:"rgba(83, 83, 83, 0.95)",
+        boxShadow:"inset -3px -3px rgba(83, 83, 83, 0.95)",
         "&:hover":{
             cursor:"pointer",
+            boxShadow:"inset -2px -2px rgba(123, 123, 123, 0.95)",
         }
     }
 });
