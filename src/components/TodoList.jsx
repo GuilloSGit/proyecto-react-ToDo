@@ -1,11 +1,26 @@
 import React from 'react';
-import { TodoItems } from './TodoItems';
+import { TodoItem } from './TodoItem';
+import { makeStyles } from '@material-ui/styles';
 
 export function TodoList({todos, toggleTodo}) {
+
+    const useStyles = makeStyles ({
+        listOfItems:{
+            minWidth:"85%",
+            margin:"20px",
+            padding:"5px",
+            borderRadius:"15px",
+            border:"none",
+            backgroundColor:"rgba(13, 13, 13, 0.65)",
+        }
+    });
+
+    const classes = useStyles();
+
     return (
-        <ul>
+        <ul className={classes.listOfItems}>
             {todos.map((todo) => (
-                <TodoItems key={todo.id} todo= { todo } toggleTodo= { toggleTodo }/>
+                <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo}/>
             ))}
         </ul>
     );
