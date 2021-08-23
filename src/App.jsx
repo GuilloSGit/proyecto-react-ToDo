@@ -50,8 +50,9 @@ const useStyle = makeStyles({
     },
     numOfTasks:{
         backgroundColor:"rgba(13, 13, 13, 0.65)",
-        padding:"4px",
-        boxShadow:"3px 3px gray",
+        padding:"14px",
+        margin:"10px",
+        boxShadow:"inset -3px -3px rgba(13, 13, 13, 0.965)",
     },
     divTareas:{
         minWidth:"85%",
@@ -61,6 +62,7 @@ const useStyle = makeStyles({
         alignItems:"center",
     },
     label:{
+        userSelect:"none",
         marginBottom:"10px",
         display:"inline-block",
         fontWeight:"600",
@@ -141,7 +143,7 @@ export function App(){
                     <button onClick={handleTodoAdd} className={classes.button}>➕</button>
                     <button onClick={handleClearAll} className={classes.button}>🗑️</button>
                 </div>
-                <div className={classes.msgTasks}>Te queda(n) <span className={classes.numOfTasks}> {todos.filter((todo) => !todo.completed).length}</span><br/> tareas pendientes</div>
+                <div className={classes.msgTasks}>Te queda(n) <span className={classes.numOfTasks}> {todos.filter((todo) => !todo.completed).length}</span> tarea(s) pendientes</div>
             </div>
         </Fragment>
     );

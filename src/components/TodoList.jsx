@@ -6,7 +6,8 @@ export function TodoList({todos, toggleTodo}) {
 
     const useStyles = makeStyles ({
         listOfItems:{
-            minWidth:"85%",
+            minHeight:"35px",
+            minWidth:"80%",
             margin:"20px",
             padding:"5px",
             borderRadius:"15px",
