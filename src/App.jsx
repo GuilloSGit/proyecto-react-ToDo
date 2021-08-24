@@ -133,7 +133,28 @@ export function App(){
 
     return (
         <Fragment>
-            <div className={classes.mainContainer}>
+        
+            {todos.filter((todo) => !todo.completed).length === 0
+            
+            ? <div className={classes.mainContainer}>
+            
+                <TodoList todos={ todos }  toggleTodo={toggleTodo} className={classes.listOfTasks}/>
+                <div>No tienes tareas pendientes</div>
+                <img src="../unnamed.gif" alt="Aplausos" width="75px"/>
+                <br/>
+                <div className={classes.divTareas}>
+                    <label for="tareas" className={classes.label}>Agregar tarea</label>
+                    <input ref={todoTaskRef} type="text" className={classes.inputTasks}/>
+                </div>
+                <div className={classes.addAndDeleteButton}>
+                    <button onClick={handleTodoAdd} className={classes.button}>➕</button>
+                    <button onClick={handleClearAll} className={classes.button}>🗑️</button>
+                </div>
+                <div className={classes.msgTasks}>Te queda(n) <span className={classes.numOfTasks}>
+                {todos.filter((todo) => !todo.completed).length}</span> tarea(s) pendientes</div>
+             </div>
+            
+            : <div className={classes.mainContainer}>
                 <TodoList todos={ todos }  toggleTodo={toggleTodo} className={classes.listOfTasks}/>
                 <div className={classes.divTareas}>
                     <label for="tareas" className={classes.label}>Agregar tarea</label>
@@ -143,8 +164,10 @@ export function App(){
                     <button onClick={handleTodoAdd} className={classes.button}>➕</button>
                     <button onClick={handleClearAll} className={classes.button}>🗑️</button>
                 </div>
-                <div className={classes.msgTasks}>Te queda(n) <span className={classes.numOfTasks}> {todos.filter((todo) => !todo.completed).length}</span> tarea(s) pendientes</div>
-            </div>
+                <div className={classes.msgTasks}>Te queda(n) <span className={classes.numOfTasks}>
+                {todos.filter((todo) => !todo.completed).length}</span> tarea(s) pendientes</div>
+            </div>}
+            
         </Fragment>
     );
 }
