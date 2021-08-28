@@ -12,7 +12,7 @@ const useStyle = makeStyles({
         flexWrap:"nowrap",
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"rgba(3, 3, 0, 0.696)",
+        backgroundColor:"rgba(3, 3, 0, 0.496)",
         borderRadius:"20px",
         width:"95%",
         maxWidth:"700px",
